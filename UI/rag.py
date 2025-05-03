@@ -4,15 +4,20 @@ import os
 import plotly.express as px
 import json
 from openai import OpenAI
+import google.generativeai as genai
 from datetime import datetime, timezone
-#from dotenv import load_dotenv
-#load_dotenv()
+from dotenv import load_dotenv
+load_dotenv()
 
-import os
 #print("🔍 API KEY STARTS WITH:", os.getenv("OPENAI_API_KEY")[:10])  # debug
+api_key = os.getenv("GEMINI_API_KEY")
+if not api_key:
+    raise ValueError("❌ GEMINI_API_KEY not found in environment or .env")
 
+genai.configure(api_key=api_key)
+model = genai.GenerativeModel('gemini-2.5-pro-exp-03-25')
 
-client = OpenAI(api_key="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")
+#client = OpenAI(api_key="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")
 #print("🔑 Loaded API Key:", os.getenv("OPENAI_API_KEY"))
 
 def analyze_forecast(df1, df2):
@@ -57,12 +62,15 @@ def analyze_forecast(df1, df2):
         Data:
         {merged.round(2).to_string(index=False)}
         """
-        response = client.chat.completions.create(
-            model="gpt-4o",
-            temperature=0.2,
-            messages=[{"role": "user", "content": prompt}]
-        )
-        return response['choices'][0]['message']['content'].strip()
+
+        response = model.generate_content(prompt)
+        return response.text.strip()
+        #response = client.chat.completions.create(
+         #   model="gpt-4o",
+          #  temperature=0.2,
+           # messages=[{"role": "user", "content": prompt}]
+        #)
+        #return response['choices'][0]['message']['content'].strip()
 
     summaries = {
         "Prompt Month": generate_summary(prompt_month, df_pct, "Prompt Month"),
