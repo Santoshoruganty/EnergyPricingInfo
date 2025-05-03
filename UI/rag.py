@@ -12,7 +12,7 @@ import os
 print("🔍 API KEY STARTS WITH:", os.getenv("OPENAI_API_KEY")[:10])  # debug
 
 
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key="OPENAI_API_KEY=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")
 print("🔑 Loaded API Key:", os.getenv("OPENAI_API_KEY"))
 
 def analyze_forecast(df1, df2):
