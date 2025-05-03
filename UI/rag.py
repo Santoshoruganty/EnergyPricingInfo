@@ -12,6 +12,7 @@ load_dotenv()  # Loads .env file
 #openai.api_key = os.getenv("OPENAI_API_KEY")
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+print("🔑 Loaded API Key:", os.getenv("OPENAI_API_KEY"))
 
 def analyze_forecast(df1, df2):
     df1['Curve Start Month'] = pd.to_datetime(df1['Curve Start Month'], utc=True)
