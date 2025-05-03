@@ -6,10 +6,11 @@ import json
 from openai import OpenAI
 from datetime import datetime, timezone
 from dotenv import load_dotenv
+load_dotenv()
 
-# 🔑 Set OpenAI API key
-load_dotenv()  # Loads .env file
-#openai.api_key = os.getenv("OPENAI_API_KEY")
+import os
+print("🔍 API KEY STARTS WITH:", os.getenv("OPENAI_API_KEY")[:10])  # debug
+
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 print("🔑 Loaded API Key:", os.getenv("OPENAI_API_KEY"))
