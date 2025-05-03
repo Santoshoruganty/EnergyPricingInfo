@@ -7,8 +7,21 @@ from openai import OpenAI
 import google.generativeai as genai
 from datetime import datetime, timezone
 from dotenv import load_dotenv
-load_dotenv()
 
+st.markdown(f"""
+<div style='
+    background-color: var(--secondary-background-color);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+'>
+<h4 style='margin-top: 0;'>{key}</h4>
+<p>{val}</p>
+</div>
+""", unsafe_allow_html=True)
+
+load_dotenv()
 #print("🔍 API KEY STARTS WITH:", os.getenv("OPENAI_API_KEY")[:10])  # debug
 api_key = os.getenv("GEMINI_API_KEY")
 if not api_key:
