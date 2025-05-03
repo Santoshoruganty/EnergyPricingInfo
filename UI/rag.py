@@ -8,18 +8,23 @@ import google.generativeai as genai
 from datetime import datetime, timezone
 from dotenv import load_dotenv
 
-st.markdown(f"""
-<div style='
-    background-color: var(--secondary-background-color);
-    color: var(--text-color);
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-'>
-<h4 style='margin-top: 0;'>{key}</h4>
-<p>{val}</p>
-</div>
-""", unsafe_allow_html=True)
+cols = st.columns(3)
+for i, (key, val) in enumerate(summaries.items()):
+    with cols[i % 3]:
+        st.markdown(f"""
+        <div style='
+            background-color: var(--secondary-background-color);
+            color: var(--text-color);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        '>
+        <h4 style='margin-top: 0;'>{key}</h4>
+        <p>{val}</p>
+        </div>
+        """, unsafe_allow_html=True)
+
 
 load_dotenv()
 #print("🔍 API KEY STARTS WITH:", os.getenv("OPENAI_API_KEY")[:10])  # debug
