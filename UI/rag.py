@@ -3,13 +3,15 @@ import pandas as pd
 import os
 import plotly.express as px
 import json
-import openai
+from openai import OpenAI
 from datetime import datetime, timezone
 from dotenv import load_dotenv
 
 # 🔑 Set OpenAI API key
 load_dotenv()  # Loads .env file
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
+client = OpenAI()
 
 def analyze_forecast(df1, df2):
     df1['Curve Start Month'] = pd.to_datetime(df1['Curve Start Month'], utc=True)
@@ -53,9 +55,9 @@ def analyze_forecast(df1, df2):
         Data:
         {merged.round(2).to_string(index=False)}
         """
-        response = openai.ChatCompletion.create(
-            model="gpt-4",
-            temperature=0.3,
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            temperature=0.2,
             messages=[{"role": "user", "content": prompt}]
         )
         return response['choices'][0]['message']['content'].strip()
