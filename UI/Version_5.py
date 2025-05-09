@@ -169,7 +169,7 @@ def analyze_forecast(df1, df2):
         # {merged.round(2).to_string(index=False)}
         # """
         prompt = f"""
-        You are an expert energy analyst. Write **3 crisp bullet points** summarizing trends from the following data. **Do not add any introductions** like "Here is the summary" — only the 3 points.
+        You are an expert energy analyst. Write **A bullet point** summarizing trends from the following data. **Do not add any introductions** like "Here is the summary" — only the 3 points.
 
         Focus on:
         - Market direction (up/down/mixed)
