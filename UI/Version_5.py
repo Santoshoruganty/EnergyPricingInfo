@@ -263,7 +263,7 @@ def display_summaries(summaries):
 
 
 # Streamlit App
-st.title("TrueLight Non-Energy News Letter")
+st.title("Non-Energy NewsLetter")
 
 tabs = st.tabs(["ERCOT", "NYISO", "ISONE", "MISO", "PJM"])
 for tab_name, tab in zip(["ercot", "nyiso", "isone", "miso", "pjm"], tabs):
