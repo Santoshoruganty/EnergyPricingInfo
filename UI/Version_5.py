@@ -125,9 +125,9 @@ def get_data_df(token, start_date, end_date, op_day, offset, curve, iso, strip, 
     return pd.read_csv(StringIO(response.content.decode('utf-8')), header=None)
 
 def clean_forecast_df(df):
-    if df.shape[0] < 10:
-        raise ValueError("Dataframe has fewer than 10 rows. Possibly malformed or empty response.")
-        return pd.DataFrame()
+    #if df.shape[0] < 10:
+     #   raise ValueError("Dataframe has fewer than 10 rows. Possibly malformed or empty response.")
+      #  return pd.DataFrame()
     meta_cols = df.iloc[7, 2:].tolist()
     fixed_cols = df.iloc[9, :2].tolist()
     full_cols = fixed_cols + meta_cols
