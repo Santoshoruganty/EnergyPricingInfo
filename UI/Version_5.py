@@ -111,10 +111,13 @@ def login(email="anwar@truelightenergy.com", password="anwar@truelightenergy.com
 def get_data_df(token, start_date, end_date, op_day, offset, curve, iso, strip, history, typ):
     url = "https://truepriceenergy.com/get_data"
     query = {
-        "start": start_date, "end": end_date,
+        "start": start_date,
+        "end": end_date,
         "operating_day": op_day,
-        "curve_type": curve, "iso": iso,
-        "strip": strip, "history": history,
+        "curve_type": curve,
+        "iso": iso,
+        "strip": strip,
+        "history": history,
         "type": typ
     }
     headers = {"Authorization": f"Bearer {token}"}
@@ -124,6 +127,7 @@ def get_data_df(token, start_date, end_date, op_day, offset, curve, iso, strip, 
 def clean_forecast_df(df):
     if df.shape[0] < 10:
         raise ValueError("Dataframe has fewer than 10 rows. Possibly malformed or empty response.")
+        return pd.DataFrame()
     meta_cols = df.iloc[7, 2:].tolist()
     fixed_cols = df.iloc[9, :2].tolist()
     full_cols = fixed_cols + meta_cols
