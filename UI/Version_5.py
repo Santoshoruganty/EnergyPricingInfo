@@ -279,8 +279,15 @@ for tab_name, tab in zip(["ercot", "nyiso", "isone", "miso", "pjm"], tabs):
                     st.header("📰 Newsletter Summary")
                     display_summaries(summaries)
                 except Exception as e:
-                    st.error(f"Pipeline error: {e}")
-                    continue  # skip visualization if pipeline fails
+                    st.warning(f"Pipeline failed: {e}")
+                    st.info("Falling back to previously cached data...")
+                    df1, df2, summaries = load_data(tab_name)
+                    if summaries:
+                        st.header("📰 Newsletter Summary (Fallback)")
+                        display_summaries(summaries)
+                    else:
+                        st.error("No previous data found either.")
+                        continue
         else:
             df1, df2, summaries = load_data(tab_name)
             if summaries:
