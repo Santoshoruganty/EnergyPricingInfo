@@ -20,7 +20,7 @@ st.set_page_config(page_title="Forecast Comparison", layout="wide")
 
 
 
-st.image("/home/ubuntu/EnergyPricingInfo/UI/Company.png", width=300)
+st.image("/home/ubuntu/EnergyPricingInfo/UI/logo.png", width=300)
 
 urllib3.disable_warnings()
 load_dotenv()
