@@ -174,7 +174,6 @@ def analyze_forecast(df1, df2):
         Focus on:
         - Market direction (up/down/mixed)
         - Big increases/decreases in categories
-        - Keep it professional, direct, and data-driven
 
         Data:
         {merged.round(2).to_string(index=False)}
