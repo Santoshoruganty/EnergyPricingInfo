@@ -529,7 +529,7 @@ if selected_iso != "Select an ISO":
     
 else:
     st.markdown("""
-    ### 👋 Welcome to TrueLight Non-Energy Analysis
+    ### Welcome to TrueLight Non-Energy Analysis
     
     Please select an ISO from the dropdown above to begin analysis.
     
@@ -539,12 +539,7 @@ else:
     - **ISONE** - ISO New England
     - **MISO** - Midcontinent Independent System Operator
     - **PJM** - PJM Interconnection
-    
-    Each analysis includes:
-    - 📊 Market summary across different time periods
-    - 📈 Current vs Previous forecast comparison
-    - 💾 Efficient cache storage by date
-    """)
+    )
 
 # Footer
 st.markdown("""
