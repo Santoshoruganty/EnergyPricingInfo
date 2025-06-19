@@ -538,30 +538,30 @@ else:
     - **NYISO** - New York Independent System Operator  
     - **ISONE** - ISO New England
     - **MISO** - Midcontinent Independent System Operator
-    - **PJM** - PJM Interconnection
+    - **PJM** - PJM Interconnection """
     )
 
 # Footer
 st.markdown("""
-    <hr style='margin-top: 3rem; margin-bottom: 2rem;'>
-    <div style='display: flex; justify-content: space-between; align-items: flex-start; background-color: black; padding: 2rem;'>
-        <div>
-            <p style='margin: 0 0 1rem 0; text-decoration: underline;'>
-                <a href='https://www.truelightenergy.com/product' target='_blank' style='color: white; text-decoration: underline;'>Product</a>
-            </p>
-            <p style='margin: 0 0 1rem 0; text-decoration: underline;'>
-                <a href='https://www.truelightenergy.com/about-1' target='_blank' style='color: white; text-decoration: underline;'>About</a>
-            </p>
-            <p style='margin: 0; text-decoration: underline;'>
-                <a href='https://www.truelightenergy.com/contact' target='_blank' style='color: white; text-decoration: underline;'>Contact</a>
-            </p>
-        </div>
-        <div style='text-align: right;'>
-            <p style='color: white; margin: 0;'>sales@truelightenergy.com</p>
-            <p style='color: white; margin: 0;'>(617) 209-2415</p>
-            <p style='color: white; margin: 0;'>18 Shipyard Drive, Suite 2A</p>
-            <p style='color: white; margin: 0;'>Hingham, MA 02043</p>
-            <p style='color: white; margin: 0;'>&copy; 2025 TRUELight Energy</p>
-        </div>
+<hr style='margin-top: 3rem; margin-bottom: 2rem;'>
+<div style='display: flex; justify-content: space-between; align-items: flex-start; background-color: black; padding: 2rem;'>
+    <div>
+        <p style='margin: 0 0 1rem 0; text-decoration: underline;'>
+            <a href='https://www.truelightenergy.com/product' target='_blank' style='color: white; text-decoration: underline;'>Product</a>
+        </p>
+        <p style='margin: 0 0 1rem 0; text-decoration: underline;'>
+            <a href='https://www.truelightenergy.com/about-1' target='_blank' style='color: white; text-decoration: underline;'>About</a>
+        </p>
+        <p style='margin: 0; text-decoration: underline;'>
+            <a href='https://www.truelightenergy.com/contact' target='_blank' style='color: white; text-decoration: underline;'>Contact</a>
+        </p>
     </div>
+    <div style='text-align: right;'>
+        <p style='color: white; margin: 0;'>sales@truelightenergy.com</p>
+        <p style='color: white; margin: 0;'>(617) 209-2415</p>
+        <p style='color: white; margin: 0;'>18 Shipyard Drive, Suite 2A</p>
+        <p style='color: white; margin: 0;'>Hingham, MA 02043</p>
+        <p style='color: white; margin: 0;'>&copy; 2025 TRUELight Energy</p>
+    </div>
+</div>
 """, unsafe_allow_html=True)
