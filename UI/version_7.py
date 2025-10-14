@@ -104,7 +104,7 @@ def get_latest_cache(iso_name):
 # groq_api_key = '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'
 groq_api_key = os.getenv("GROQ_API_KEY")
 
-groq_client = Groq(api_key=groq_api_key)
+groq_client = Groq(api_key="gsk_GB33plKMiQ2C7YYCEDwZWGdyb3FYFc4ISoZMKthE1gUcofRXzPuby")
 
 def get_groq_summary(prompt):
     response = groq_client.chat.completions.create(
